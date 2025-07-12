@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-btn-primary',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './btn-primary.sass'
 })
 export class BtnPrimary {
-
+  @Input() name_value: string = "Enviar";
 }
