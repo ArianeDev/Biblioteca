@@ -26,6 +26,9 @@ public class Author {
 	@Column(nullable = true)
 	private String nationality;
 
+	// O construtor vazio é obrigatório porque frameworks como JPA e Jackson precisam dele para instanciar objetos automaticamente via reflexão antes de preencher os campos.
+	public Author() {}
+
 	public Author(String name, LocalDate birth_date, String nationality) {
 		this.name = name;
 		this.birth_date = birth_date;

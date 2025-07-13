@@ -42,6 +42,8 @@ public class Book {
 	@JoinColumn(name = "author_id")
 	private Author author;
 
+	public Book() {};
+
 	public Book(String title, String ISBN, String category, String phoneURL, String description, int quantity, String evaluation, Author author) {
 		this.title = title;
 		this.ISBN = ISBN;
