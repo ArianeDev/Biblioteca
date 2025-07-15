@@ -1,1 +1,16 @@
-<p>card-book works!</p>
+<div class="cards-container">
+	@for (book of books; track book.id) {
+		<div class="card-container">
+			<img [src]="book.photoURL" alt="">
+			<div class="card-container-data">
+				<h2>{{ book.title }}</h2>
+				<p>{{ book.ISBN }}</p>
+				<p>{{ book.quantity }}</p>
+				<p>{{ book.author.name }}</p>
+			</div>
+		</div>
+	}
+	@empty {
+		<h2>Nenhum livro encontrado.</h2>
+	}
+</div>

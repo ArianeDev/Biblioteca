@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
+  standalone: true,
   imports: [Header, RouterModule],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.sass'

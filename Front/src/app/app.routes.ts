@@ -9,7 +9,7 @@ export const routes: Routes = [
 		component: Home
 	},
 	{
-		path: "",
+		path: "app",
 		component: MainLayout,
 		children: [
 			{

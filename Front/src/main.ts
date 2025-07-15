@@ -1,6 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import 'zone.js';
+import { routes } from './app/app.routes';
+import { provideRouter } from '@angular/router';
 import { App } from './app/app';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(App, {
+  providers: [
+    provideHttpClient(withFetch()),
+    provideRouter(routes)
+  ]
+});
+
