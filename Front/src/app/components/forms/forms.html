@@ -1,0 +1,44 @@
+<section>
+	<form (ngSubmit)="registerBook()">
+		<h2>Cadastrar</h2>
+		<div class="container-input">
+			<label>Título</label>
+			<input type="text" name="title" [(ngModel)]="title" placeholder="Digite o título do livro..." class="textInput">
+		</div>
+		<div class="container-input">
+			<label>ISBN:</label>
+			<input type="text" name="isbn" [(ngModel)]="isbn" placeholder="Digite o ISBN do livro..." class="textInput">
+		</div>
+		<div class="container-input">
+			<label>Categoria:</label>
+			<input type="text" name="category" [(ngModel)]="category" placeholder="Digite o ISBN do livro..." class="textInput">
+		</div>
+		<div class="container-input">
+			<label>Foto:</label>
+			<input type="text" name="photoURL" [(ngModel)]="photoURL" placeholder="Insirá uma url do livro..." class="textInput">
+		</div>
+		<div class="container-input">
+			<label>Descrição</label>
+			<input type="text" name="description" [(ngModel)]="description" placeholder="Digite uma leve descrição do livro..." class="textInput">
+		</div>
+		<div class="container-input">
+			<label>Quantidade:</label>
+			<input type="number" name="quantity" [(ngModel)]="quantity" placeholder="Digite a quantidade de livros disponíveis..." class="textInput">
+		</div>
+		<div class="container-input">
+			<label>Avaliação:</label>
+			<input type="text" name="evaluation" [(ngModel)]="evaluation" placeholder="Digite a avaliação do livro..." class="textInput">
+		</div>
+		<div class="container-select">
+			<label>Autor:</label>
+			<select id="author" name="author" [(ngModel)]="selectedAuthor">
+				@for (author of authors; track author.id) {
+					<option [value]="author.id">{{ author.name }}</option>
+				} @empty {
+					<option disabled>Nenhum autor disponível</option>
+				}
+			</select>
+		</div>
+		<app-btn-primary [name_value]="'Cadastrar'"></app-btn-primary>
+	</form>
+</section>

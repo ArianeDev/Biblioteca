@@ -1,16 +1,26 @@
 <div class="cards-container">
 	@for (book of books; track book.id) {
 		<div class="card-container">
-			<img [src]="book.photoURL" alt="">
 			<div class="card-container-data">
-				<h2>{{ book.title }}</h2>
-				<p>{{ book.ISBN }}</p>
-				<p>{{ book.quantity }}</p>
-				<p>{{ book.author.name }}</p>
+				<img [src]="book.photoURL" alt="">
+				<div class="card-container-data-book">
+					<h2>{{ book.title }}</h2>
+					<p>{{ book.ISBN }}</p>
+					<p>{{ book.quantity }}</p>
+					<p>{{ book.author.name }}</p>
+				</div>
+			</div>
+			<div class="card-container-icons">
+				<button >
+					<lucide-icon [img]="PenIcon" class="icon"></lucide-icon>
+				</button>
+				<button (click)="deleteBook(book.id)">
+					<lucide-icon [img]="Trash" class="icon"></lucide-icon>
+				</button>
 			</div>
 		</div>
 	}
 	@empty {
-		<h2>Nenhum livro encontrado.</h2>
+		<h2>Carregando...</h2>
 	}
 </div>

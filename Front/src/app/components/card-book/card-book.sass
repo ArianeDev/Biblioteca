@@ -1,12 +1,31 @@
 .card-container
 	display: flex
-	gap: 2rem
 	padding: 1.5rem
 	border-radius: 0.5rem
 	background-color: rgb(255, 255, 255)
 	margin-top: 1rem
 	width: 90%
+	justify-content: space-between
 
-	img
-		height: 10vh
+	.card-container-data
+		display: flex
+		gap: 2rem
+
+		img
+			height: 10vh
+
+	.card-container-icons
+		display: flex
+		flex-direction: column
+
+		button
+			background-color: transparent
+			border: none
+			cursor: pointer
+			outline: none
+			height: 50%
+			transition: all .5s ease
+
+			&:hover
+				color: rgb(121, 121, 121)
 
